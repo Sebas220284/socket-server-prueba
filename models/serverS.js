@@ -1,13 +1,16 @@
 const express= require('express')
+const app=express()
 const http= require('http')
 const socketio=require('socket.io')
+const port=process.env.PORT || 8081
+
 const path=require('path')
 const Sockets=require('./sokets')
 
 class Server{
     constructor(){
         this.app=express();
-        this.port=  process.env.PORT || 8081
+        this.port= port
         
 
 
