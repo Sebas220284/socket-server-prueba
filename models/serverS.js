@@ -1,13 +1,14 @@
 const express= require('express')
 const app=express()
-const http= require('http')
+const https= require('http')
 const socketio=require('socket.io')
+const {Server} =require('socket.io')
 const port=process.env.PORT || 8081
 
 const path=require('path')
 const Sockets=require('./sokets')
 
-class Server{
+class Servers{
     constructor(){
         this.app=express();
         this.port= port
@@ -15,7 +16,7 @@ class Server{
 
 
         //http server
-this.server=http.createServer(this.app)
+this.server=https.createServer(this.app)
 
 
         //configuraciones de sockts
@@ -42,9 +43,10 @@ this.consfigurarSockets()
         this.server.listen(this.port,()=>{
             console.log('server corriendo',this.port)
         });
+        this.io.listen(9000)
     }
 }
 
 
 
-module.exports=Server
+module.exports=Servers
