@@ -40,8 +40,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js" integrity="sha512-xbQU0+iHqhVt7VIXi6vBJKPh3IQBF5B84sSHdjKiSccyX/1ZI7Vnkt2/8y8uruj63/DVmCxfUNohPNruthTEQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        //on recibe el mensaje 
-      const socket=  io('https://server-socket-sebastian.herokuapp.com')
+
+          //on recibe el mensaje 
+        //aqui se pondra la url del servidor emn este caso pondre mi localhost
+      const socket=  io('http://localhost:8081')
       const formulario=document.querySelector('#miForm')
        const mensaje= document.querySelector('#misMensaje')
       const txtMensaje=document.querySelector('#txtMensaje')
